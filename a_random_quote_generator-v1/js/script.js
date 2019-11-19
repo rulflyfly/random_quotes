@@ -51,7 +51,6 @@ const quoteBox = $('#quote-box');
 const button = $('#load-quote');
 const body = $('body');
 
-
 const getRandomQuote = (array) => {
   const randomIndex = Math.floor(Math.random()*array.length);
   return array[randomIndex];
@@ -108,11 +107,14 @@ const printQuote = () => {
   };
 
   body.css('background-color', getRandomColor()); //here we change the color of the body element to a randomly generated color
+  
+  clicked = true;
+}
 
+let setQuoteInterval = window.setInterval(printQuote, 3000); 
+function clearInterval() {
+  window.clearInterval(setQuoteInterval);
+  setQuoteInterval = window.setInterval(printQuote, 3000);
 }
 
 button.on('click', printQuote);
-
-setInterval(printQuote, 3000); // this will make quotes appear every three seconds
-
-   
