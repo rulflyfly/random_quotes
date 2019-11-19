@@ -57,7 +57,6 @@ const quotes = [
 const quoteBox = $('#quote-box');
 const button = $('#load-quote');
 const body = $('body');
-let clicked = false;
 
 const getRandomQuote = (array) => {
   const randomIndex = Math.floor(Math.random()*array.length);
